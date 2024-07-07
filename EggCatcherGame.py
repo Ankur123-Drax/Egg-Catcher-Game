@@ -5,13 +5,15 @@ from tkinter import Canvas, Tk, messagebox, font, PhotoImage
 canvas_width = 800
 canvas_height = 400
 root = Tk()
-root.title('Egg Catcher')
+root.title('Egg Catcher Game')
+photo = PhotoImage(file = "icon/eggIcon.png")
+root.iconphoto(False, photo)
 c = Canvas(root, width=canvas_width, height=canvas_height, background="#FFE5B4")
 c.create_rectangle(-5, canvas_height - 100, canvas_width + 5, canvas_height + 5, fill="sea green", width=0)
 c.create_oval(-80, -80, 120, 120, fill='turquoise3', width=0)
 c.pack()
 
-color_cycle = cycle(["light blue", "light green", "light pink", "light yellow", "light cyan"])
+color_cycle = cycle(["light blue", "light green", "pink", "light yellow", "cyan","white"])
 egg_width = 45
 egg_height = 55
 egg_score = 10
@@ -19,7 +21,7 @@ egg_speed = 500
 egg_interval = 4000
 difficulty = 0.95
 
-catcher_image = PhotoImage(file="basket.png")
+catcher_image = PhotoImage(file="image/basket.png")
 catcher_width = catcher_image.width()
 catcher_height = catcher_image.height()
 catcher_startx = canvas_width / 2 - catcher_width / 2
